@@ -10,6 +10,7 @@ export default {
     extend: {
       textColor: {
         'gfg-green': '#5d9e52',
+        'gfg-dark': "#414341"
       },
       backgroundColor:{
         "gfg-green": '#5d9e52',

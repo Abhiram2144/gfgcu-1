@@ -1,18 +1,120 @@
-import Layout from '../components/layouts/Layout'
+import Layout from "../components/layouts/Layout";
+// fake data for now, later fetch it from the data base
+import Blogs from "../assets/fakedb.json";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const BlogsPage = () => {
-  return (
-    <Layout>
-        <div>
-            <h1 className='text-2xl font-bold'>Welcome to the Blogs Page</h1>
-            <p className='font-bold'>Do make changes in this Layout Container only, don't change contents of other files or pages and do not delete or replace the Layout Container</p>
-            <p>Delete the contents between the Layout container</p>
-            <p>Use tailwind classes. If you don't know about tailwind then plz try to learn tailwind. It will hardly take 30 minutes to 1-hour</p>
-            <p>Use Tailwind classes for styling. Don't use inline styling.</p>
-            <p>Don't write css for dark theme, It has already taken care of.</p>
-        </div>
-    </Layout>
-  )
-}
+  const [blogs, setBlogs] = useState([]);
 
-export default BlogsPage
+  useEffect(() => {
+    // fetch the blogs from the api
+    setBlogs(Blogs);
+  });
+
+ 
+  console.log(blogs);
+  return (
+    // Layout has pre-defined margins 
+    <Layout>
+      <div className="dark:bg-custom-dark-2 bg-gfg-green m-0 p-0">
+        {/* Blog Spot  */}
+        <div className="">
+          <h1 className="text-center font-bold text-4xl py-7 text-white dark:text-white m-0">
+            BLOGSPOT
+          </h1>
+        </div>
+
+        <section className="container mx-auto px-4 py-8 bg-white w-auto p-0 m-0">
+          <h1 className="text-center font-bold text-2xl text-gfg-green">
+            Read What People Write About US
+          </h1>
+
+          <ul className="p-2 pt-8 dark:text-black">
+            {/* only limited reviews */}
+            {blogs.slice(0, 3).map((user) => (
+              <li key={user.username}>
+                <ul>
+                  {user.blogs.map((blog) => (
+                    <li
+                      key={blog.username}
+                      className="bg-custom-grey border p-4 m-4 rounded"
+                    >
+                      <h2 className="text-blue-950 font-bold text-l">
+                        {user.username}
+                      </h2>
+                      <div className="pl-4">
+                        <p>{blog.text}</p>
+
+                        <div className="text-right mt-6 flex flex-col md:flex-row">
+                          <span className="flex flex-row-reverse">
+                            <div>
+                              <button className="pl-5 pr-5">
+                                <i className="fa fa-thumbs-up fa-thin dark:text-gfg-dark text-gfg-green hover:text-gfg-dark dark:hover:text-gfg-green hover:"></i>
+                              </button>
+                            </div>
+                            <p>Likes: {blog.likes}</p>
+                          </span>
+                          <span className="flex flex-row-reverse">
+                            <div>
+                              <button className="pl-5 pr-5">
+                                <i className="fa fa-comment dark:text-gfg-dark text-gfg-green hover:text-gfg-dark dark:hover:text-gfg-green"></i>
+                              </button>
+                            </div>
+                            <p>Comments: {blog.comments}</p>
+                          </span>
+                          <span className="flex flex-row-reverse">
+                            <div>
+                              <button className="pl-5 pr-5">
+                                <i className="fa fa-share dark:text-gfg-dark text-gfg-green hover:text-gfg-dark dark:hover:text-gfg-green"></i>
+                              </button>
+                            </div>
+                            <p>Share</p>
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          <div className="text-right">
+            <a href="#" className="text-blue-800 hover:underline">
+              Load more comments
+            </a>
+          </div>
+        </section>
+
+        {/* Pre fotter */}
+        <section className="dark:bg-custom-dark mt-7">
+          <div className="bg-white  dark:text-white dark:bg-custom-dark-2 p-8">
+            <div className="items-center justify-center p-5 dark:bg-custom-dark">
+              <h1 className="text-center font-bold text-3xl pb-5">
+                Want to share your own experience?
+              </h1>
+
+              <div className="mt-3 text-center">
+                <h2 className="mb-3">Write your review and post it on our community page!</h2>
+                <div>
+                  {/* bug in input, when the screen size is below 640px it overflows */}
+                <input
+                  type="text"
+                  placeholder={"Write your review here:"}
+                  className={`dark:text-black rounded p-1 w-96 outline-green-700 dark:outline-none mr-1 `}
+                  
+                />
+                  <button className="bg-gfg-green text-white hover:bg-custom-dark dark:bg-custom-dark-2 dark:text-white w-13 px-4 rounded h-8 dark:hover:bg-gfg-green dark:hover:text-black font-bold hover: transf">
+                    POST
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </Layout>
+  );
+};
+
+export default BlogsPage;
