@@ -49,7 +49,7 @@ const BlogsPage = () => {
                         <div className="text-right mt-6 flex flex-col md:flex-row">
                           <span className="flex flex-row-reverse">
                             <div>
-                              <button className="pl-5 pr-5">
+                              <button className="pl-5 pr-5 hover:scale-x-125 hover:scale-y-125">
                                 <i className="fa fa-thumbs-up fa-thin dark:text-gfg-dark text-gfg-green hover:text-gfg-dark dark:hover:text-gfg-green hover:"></i>
                               </button>
                             </div>
@@ -57,7 +57,7 @@ const BlogsPage = () => {
                           </span>
                           <span className="flex flex-row-reverse">
                             <div>
-                              <button className="pl-5 pr-5">
+                              <button className="pl-5 pr-5 hover:scale-x-125 hover:scale-y-125">
                                 <i className="fa fa-comment dark:text-gfg-dark text-gfg-green hover:text-gfg-dark dark:hover:text-gfg-green"></i>
                               </button>
                             </div>
@@ -65,7 +65,7 @@ const BlogsPage = () => {
                           </span>
                           <span className="flex flex-row-reverse">
                             <div>
-                              <button className="pl-5 pr-5">
+                              <button className="pl-5 pr-5 hover:scale-x-125 hover:scale-y-125">
                                 <i className="fa fa-share dark:text-gfg-dark text-gfg-green hover:text-gfg-dark dark:hover:text-gfg-green"></i>
                               </button>
                             </div>
@@ -97,11 +97,10 @@ const BlogsPage = () => {
               <div className="mt-3 text-center">
                 <h2 className="mb-3">Write your review and post it on our community page!</h2>
                 <div>
-                  {/* bug in input, when the screen size is below 640px it overflows */}
                 <input
                   type="text"
                   placeholder={"Write your review here:"}
-                  className={`dark:text-black rounded p-1 w-96 outline-green-700 dark:outline-none mr-1 `}
+                  className={`dark:text-black rounded p-1 w-96 light:border-2 light:border-green-700 outline-none  dark:outline-none mr-1 `}
                   
                 />
                   <button className="bg-gfg-green text-white hover:bg-custom-dark dark:bg-custom-dark-2 dark:text-white w-13 px-4 rounded h-8 dark:hover:bg-gfg-green dark:hover:text-black font-bold mt-3">
