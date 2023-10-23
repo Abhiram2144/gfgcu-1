@@ -104,7 +104,7 @@ const BlogsPage = () => {
                   className={`dark:text-black rounded p-1 w-96 outline-green-700 dark:outline-none mr-1 `}
                   
                 />
-                  <button className="bg-gfg-green text-white hover:bg-custom-dark dark:bg-custom-dark-2 dark:text-white w-13 px-4 rounded h-8 dark:hover:bg-gfg-green dark:hover:text-black font-bold hover: transf">
+                  <button className="bg-gfg-green text-white hover:bg-custom-dark dark:bg-custom-dark-2 dark:text-white w-13 px-4 rounded h-8 dark:hover:bg-gfg-green dark:hover:text-black font-bold mt-3">
                     POST
                   </button>
                 </div>
