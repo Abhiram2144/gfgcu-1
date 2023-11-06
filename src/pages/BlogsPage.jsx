@@ -17,7 +17,7 @@ const BlogsPage = () => {
   return (
     // Layout has pre-defined margins 
     <Layout>
-      <div className="dark:bg-custom-dark-2 bg-gfg-green m-0 p-0  mx-auto w-fit sm:mx-0 sm:w-auto">
+      <div className="overflow-auto dark:bg-custom-dark-2 bg-gfg-green m-0 p-0  mx-auto w-fit sm:mx-0 sm:w-auto">
         {/* Blog Spot  */}
         <div className="">
           <h1 className="text-center font-bold text-4xl py-7 text-white dark:text-white m-0">

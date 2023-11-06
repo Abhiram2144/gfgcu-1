@@ -37,6 +37,7 @@ import AboutUs from './pages/AboutUs';
 
 // ThemeProvide for dark and light theme
 import { ThemeProvider } from './contexts/theme';
+import BlogPage from './pages/BlogPage';
 
 
 
@@ -66,8 +67,11 @@ function App() {
         <Route path="/competitions" element={<Competitions/>}/>
         <Route path="/blogs" element={<BlogsPage/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
+        <Route path="/blogpage" element = {<BlogPage></BlogPage>}></Route>
       </Routes>
+      
       </ThemeProvider>
+
     </BrowserRouter>
   )
 }

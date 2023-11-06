@@ -7,7 +7,7 @@ const Layout = ({children}) => {
   return (
     <>
         <Navbar/>
-        <main className='p-3 bg-slate-100 dark:bg-custom-dark dark:text-slate-100'  style={{minHeight: "100vh" }}>
+        <main className=' bg-slate-100 dark:bg-custom-dark dark:text-slate-100'  style={{minHeight: "100vh" }}>
             {children}  
         </main>
         <Footer/>
